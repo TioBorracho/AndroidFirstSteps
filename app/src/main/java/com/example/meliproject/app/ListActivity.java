@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -17,21 +18,13 @@ public class ListActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.TEXT_SEARCH);
+        String message = getString(R.string.buscaste_text) + intent.getStringExtra(MainActivity.TEXT_SEARCH);
 
         TextView tView = (TextView) findViewById(R.id.textView);
         tView.setText(message);
-
-        for (int x = 1; x < 4; ++x) {
-            Product p = new Product(x);
-
-            // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragments, p).commit();
-
-
-        }
-
+        SimpleListAdapter a = new SimpleListAdapter(this);
+        ListView lv = (ListView) findViewById(R.id.listView);
+        lv.setAdapter(a);
     }
 
 

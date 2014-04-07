@@ -8,5 +8,6 @@
     <string name="search_btn">Buscar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_list">Resultados</string>
+    <string name="buscaste_text">Buscaste:</string>
 
 </resources>
