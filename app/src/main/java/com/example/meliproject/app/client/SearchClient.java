@@ -68,10 +68,10 @@ public class SearchClient {
         }
     }
 
-    public void searchItems(String searchString, CallbackListener context) throws UnsupportedEncodingException {
+    public void searchItems(String sString, CallbackListener context) throws UnsupportedEncodingException {
         this.callback = context;
         actualPage = 0;
-        this.searchString = URLEncoder.encode(searchString, "UTF-8");
+        searchString = URLEncoder.encode(sString, "UTF-8");
         String link = "https://api.mercadolibre.com/sites/MLA/search?q=" + searchString + "&limit=" + LIMIT + "&offset=" +
                 (LIMIT*actualPage);
         new NetworkTask(this).execute(link);
