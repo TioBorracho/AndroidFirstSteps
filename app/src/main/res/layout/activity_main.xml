@@ -33,8 +33,7 @@
         android:id="@+id/button"
         android:layout_below="@+id/editText"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="doSearch" />
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
